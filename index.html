@@ -2,41 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Management Portal</title>
+    <title>IARE | Secure Login</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>IARE Student Portal</h1>
-            <p>Department of CSE</p>
-        </header>
-
-        <section class="form-section">
-            <h3>Add New Student</h3>
-            <div class="input-group">
-                <input type="text" id="studentName" placeholder="Student Name">
-                <input type="text" id="rollNo" placeholder="Roll Number (e.g. 23951A0521)">
-                <button onclick="addStudent()">Add Student</button>
+<body class="auth-bg">
+    <div class="glass-login">
+        <div class="logo-area">
+            <div class="logo-circle">IARE</div>
+            <h2>DevOps Portal</h2>
+        </div>
+        <div class="auth-form">
+            <div class="input-wrapper">
+                <i data-lucide="user"></i>
+                <input type="text" id="username" placeholder="Roll Number">
             </div>
-        </section>
-
-        <section class="list-section">
-            <h3>Enrolled Students</h3>
-            <table id="studentTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Roll Number</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody id="studentBody">
-                    </tbody>
-            </table>
-        </section>
+            <div class="input-wrapper">
+                <i data-lucide="lock"></i>
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <button onclick="handleLogin()" class="btn-primary">
+                Explore Dashboard <i data-lucide="arrow-right"></i>
+            </button>
+        </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+        function handleLogin() {
+            if(document.getElementById('username').value === "23951A0521") {
+                window.location.href = "dashboard.html";
+            }
+        }
+    </script>
 </body>
 </html>
