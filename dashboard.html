@@ -10,9 +10,15 @@
     <aside class="sidebar">
         <div class="sidebar-brand">IARE Systems</div>
         <nav>
-            <a href="#" class="active"><i data-lucide="layout-dashboard"></i> Overview</a>
-            <a href="#"><i data-lucide="users"></i> Students</a>
-            <a href="#"><i data-lucide="activity"></i> Build Logs</a>
+            <a href="#" onclick="showTab('overview')" id="tab-overview" class="active">
+                <i data-lucide="layout-dashboard"></i> Overview
+            </a>
+            <a href="#" onclick="showTab('students')" id="tab-students">
+                <i data-lucide="users"></i> Students
+            </a>
+            <a href="#" onclick="showTab('logs')" id="tab-logs">
+                <i data-lucide="activity"></i> Build Logs
+            </a>
         </nav>
         <div class="sidebar-footer">
             <button onclick="logout()"><i data-lucide="log-out"></i> Logout</button>
@@ -31,7 +37,7 @@
             </div>
         </header>
 
-        <section class="metrics-grid">
+        <section class="metrics-grid" id="metrics-section">
             <div class="metric-card grad-blue">
                 <div class="metric-info"><span>Build Success</span><h3>98.2%</h3></div>
                 <i data-lucide="check-circle"></i>
@@ -48,11 +54,11 @@
 
         <div class="content-card">
             <div class="card-header">
-                <h3>Student Registry</h3>
-                <button class="btn-add" onclick="addNew()"><i data-lucide="plus"></i> Add Entry</button>
+                <h3 id="table-title">Student Registry</h3>
+                <button class="btn-add" id="add-btn" onclick="addNew()"><i data-lucide="plus"></i> Add Entry</button>
             </div>
-            <table>
-                <thead>
+            <table id="main-display-table">
+                <thead id="table-head">
                     <tr><th>Student Name</th><th>Roll Number</th><th>Dept</th><th>Status</th></tr>
                 </thead>
                 <tbody id="studentBody">
