@@ -1,5 +1,4 @@
 name: Student Management CI/CD Pipeline
-
 on:
   push:
     branches:
@@ -7,29 +6,22 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
       - name: Display Files
         run: ls -la
-
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-
       - name: Build Project
         run: echo "Building Student Management System..."
-
       - name: Run Tests
         run: echo "Running Tests..."
-
       - name: Deploy Project
         run: echo "Deployment Successful!"
