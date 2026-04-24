@@ -1,107 +1,116 @@
-// --- 1. Student Database ---
+// --- 1. Data Store ---
 const students = [
     { name: "G. Deekshitha", roll: "23951A0521", dept: "CSE", status: "Verified" },
     { name: "Vishweshwer Reddy", roll: "24951A05H0", dept: "CSE", status: "Verified" },
-    { name: "Rahul Kumar", roll: "23951A0523", dept: "IT", status: "Pending" },
-    { name: "Sneha Lata", roll: "23951A0524", dept: "ECE", status: "Verified" }
+    { name: "Rahul Kumar", roll: "23951A0523", dept: "IT", status: "Pending" }
 ];
+
+// --- 2. Login Logic ---
 function handleLogin() {
-    // .toLowerCase() makes it work whether you type 'A' or 'a'
     const user = document.getElementById('username').value.toLowerCase();
     const pass = document.getElementById('password').value;
 
-    console.log("Login Attempt:", user);
-
     if (user === "24951a05h0" && pass === "1234") {
         localStorage.setItem("isLoggedIn", "true");
-        localStorage.setItem("userRoll", user);
         window.location.href = "dashboard.html";
     } else {
-        alert("Access Denied! Check your Roll Number and Password.");
+        alert("Invalid Details! Please try again.");
     }
 }
 
+// --- 3. Tab Switching Logic ---
+function showTab(tabName) {
+    // Update Sidebar UI
+    document.querySelectorAll('.sidebar nav a').forEach(link => link.classList.remove('active'));
+    document.getElementById('tab-' + tabName).classList.add('active');
 
-// --- 3. Dashboard Initialization ---
-function initDashboard() {
-    // Check if user is logged in before showing data
-    if (localStorage.getItem("isLoggedIn") !== "true") {
-        window.location.href = "index.html";
-        return;
-    }
+    const metrics = document.getElementById('metrics-section');
+    const tableTitle = document.getElementById('table-title');
+    const tableHead = document.getElementById('table-head');
+    const addBtn = document.getElementById('add-btn');
+    const tableBody = document.getElementById('studentBody');
 
-    renderTable();
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
+    if (tabName === 'overview') {
+        metrics.style.display = 'grid';
+        tableTitle.innerText = "Student Registry";
+        tableHead.style.display = 'table-header-group';
+        addBtn.style.display = 'block';
+        renderTable();
+    } 
+    else if (tabName === 'students') {
+        metrics.style.display = 'none';
+        tableTitle.innerText = "Detailed Student List";
+        tableHead.style.display = 'table-header-group';
+        addBtn.style.display = 'block';
+        renderTable();
+    } 
+    else if (tabName === 'logs') {
+        metrics.style.display = 'none';
+        tableTitle.innerText = "CI/CD Build Logs";
+        tableHead.style.display = 'none'; // Hide headers for logs
+        addBtn.style.display = 'none';
+        
+        tableBody.innerHTML = `
+            <tr><td colspan="4" style="font-family: 'Courier New', monospace; background: #1e293b; color: #34d399; padding: 20px; line-height: 1.6; border-radius: 8px;">
+                > [INFO] Initializing CI/CD Pipeline...<br>
+                > [INFO] Fetching repository: Madhurima-05/-CI-CD<br>
+                > [SUCCESS] Checkout completed.<br>
+                > [INFO] Running Build Scripts...<br>
+                > [SUCCESS] Production build generated in 3m 24s.<br>
+                > [INFO] Deploying to Netlify...<br>
+                > [SUCCESS] Site is live at ci-cd-student.netlify.app<br>
+                > [METRIC] Overall Build Success Rate: 98.2%
+            </td></tr>
+        `;
     }
+    lucide.createIcons();
 }
 
-// --- 4. Render Table Dynamically ---
-function renderTable(dataToRender = students) {
+// --- 4. Table Rendering ---
+function renderTable(data = students) {
     const tableBody = document.getElementById('studentBody');
     if (!tableBody) return;
 
-    tableBody.innerHTML = dataToRender.map(student => `
+    tableBody.innerHTML = data.map(s => `
         <tr>
-            <td>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <img src="https://api.dicebear.com/7.x/initials/svg?seed=${student.name}" style="width: 30px; border-radius: 50%;">
-                    ${student.name}
-                </div>
-            </td>
-            <td style="font-family: monospace; font-weight: 600;">${student.roll}</td>
-            <td>${student.dept}</td>
-            <td>
-                <span class="status-tag ${student.status === 'Verified' ? 'success' : 'warning'}">
-                    ${student.status}
-                </span>
-            </td>
+            <td><div style="display:flex; align-items:center; gap:10px;">
+                <img src="https://api.dicebear.com/7.x/initials/svg?seed=${s.name}" style="width:30px; border-radius:50%;">
+                ${s.name}</div></td>
+            <td style="font-weight:600;">${s.roll}</td>
+            <td>${s.dept}</td>
+            <td><span class="status-tag ${s.status === 'Verified' ? 'success' : 'warning'}">${s.status}</span></td>
         </tr>
     `).join('');
 }
 
-// --- 5. Search Filter Function ---
+// --- 5. Utilities ---
 function filterTable() {
-    const searchTerm = document.getElementById('studentSearch').value.toUpperCase();
-    const filtered = students.filter(s => 
-        s.roll.toUpperCase().includes(searchTerm) || 
-        s.name.toUpperCase().includes(searchTerm)
-    );
+    const term = document.getElementById('studentSearch').value.toUpperCase();
+    const filtered = students.filter(s => s.roll.toUpperCase().includes(term) || s.name.toUpperCase().includes(term));
     renderTable(filtered);
 }
 
-// --- 6. Add New Entry ---
 function addNew() {
-    const name = prompt("Enter Student Name:");
-    const roll = prompt("Enter Roll Number:");
-    
+    const name = prompt("Student Name:");
+    const roll = prompt("Roll Number:");
     if (name && roll) {
-        students.push({
-            name: name,
-            roll: roll,
-            dept: "CSE",
-            status: "Pending"
-        });
+        students.push({ name, roll, dept: "CSE", status: "Pending" });
         renderTable();
-        alert("Successfully added to the DevOps Registry!");
     }
 }
 
-// --- 7. Logout ---
 function logout() {
     localStorage.clear();
     window.location.href = "index.html";
 }
 
-// --- 8. Event Listeners ---
+// On Load
 document.addEventListener('DOMContentLoaded', () => {
-    // If we are on the dashboard page
     if (document.getElementById('studentBody')) {
-        initDashboard();
+        if(localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "index.html";
+        }
+        renderTable();
     }
-    
-    // Initialize icons if the library is loaded
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 });
