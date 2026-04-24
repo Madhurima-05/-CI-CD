@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management Console</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="sidebar-brand">IARE Systems</div>
+        <nav>
+            <a href="#" class="active"><i data-lucide="layout-dashboard"></i> Overview</a>
+            <a href="#"><i data-lucide="users"></i> Students</a>
+            <a href="#"><i data-lucide="activity"></i> Build Logs</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button onclick="logout()"><i data-lucide="log-out"></i> Logout</button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-nav">
+            <div class="search-bar">
+                <i data-lucide="search"></i>
+                <input type="text" id="studentSearch" onkeyup="filterTable()" placeholder="Search roll numbers...">
+            </div>
+            <div class="user-profile">
+                <span class="badge">PRO</span>
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="avatar">
+            </div>
+        </header>
+
+        <section class="metrics-grid">
+            <div class="metric-card grad-blue">
+                <div class="metric-info"><span>Build Success</span><h3>98.2%</h3></div>
+                <i data-lucide="check-circle"></i>
+            </div>
+            <div class="metric-card grad-purple">
+                <div class="metric-info"><span>Avg Latency</span><h3>3m 24s</h3></div>
+                <i data-lucide="zap"></i>
+            </div>
+            <div class="metric-card grad-orange">
+                <div class="metric-info"><span>Total Releases</span><h3>127</h3></div>
+                <i data-lucide="package"></i>
+            </div>
+        </section>
+
+        <div class="content-card">
+            <div class="card-header">
+                <h3>Student Registry</h3>
+                <button class="btn-add" onclick="addNew()"><i data-lucide="plus"></i> Add Entry</button>
+            </div>
+            <table>
+                <thead>
+                    <tr><th>Student Name</th><th>Roll Number</th><th>Dept</th><th>Status</th></tr>
+                </thead>
+                <tbody id="studentBody">
+                    </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
