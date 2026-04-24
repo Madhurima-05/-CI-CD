@@ -5,16 +5,14 @@ const students = [
     { name: "Rahul Kumar", roll: "23951A0523", dept: "IT", status: "Pending" },
     { name: "Sneha Lata", roll: "23951A0524", dept: "ECE", status: "Verified" }
 ];
-
-// --- 2. Authentication Logic ---
 function handleLogin() {
-    const user = document.getElementById('username').value;
+    // .toLowerCase() makes it work whether you type 'A' or 'a'
+    const user = document.getElementById('username').value.toLowerCase();
     const pass = document.getElementById('password').value;
 
     console.log("Login Attempt:", user);
 
-    // Using your requested credentials
-    if (user === "24951AO5HO" && pass === "1234") {
+    if (user === "24951a05h0" && pass === "1234") {
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("userRoll", user);
         window.location.href = "dashboard.html";
@@ -22,6 +20,7 @@ function handleLogin() {
         alert("Access Denied! Check your Roll Number and Password.");
     }
 }
+
 
 // --- 3. Dashboard Initialization ---
 function initDashboard() {
