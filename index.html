@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IARE Student Portal</h1>
+            <p>Department of CSE</p>
+        </header>
+
+        <section class="form-section">
+            <h3>Add New Student</h3>
+            <div class="input-group">
+                <input type="text" id="studentName" placeholder="Student Name">
+                <input type="text" id="rollNo" placeholder="Roll Number (e.g. 23951A0521)">
+                <button onclick="addStudent()">Add Student</button>
+            </div>
+        </section>
+
+        <section class="list-section">
+            <h3>Enrolled Students</h3>
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll Number</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="studentBody">
+                    </tbody>
+            </table>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
