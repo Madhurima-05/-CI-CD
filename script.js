@@ -1,8 +1,9 @@
-// --- 1. Initial Data ---
+// --- 1. Student Database ---
 const students = [
     { name: "G. Deekshitha", roll: "23951A0521", dept: "CSE", status: "Verified" },
-    { name: "Vishweshwer Reddy", roll: "23951A0522", dept: "CSE", status: "Verified" },
-    { name: "Rahul Kumar", roll: "23951A0523", dept: "IT", status: "Pending" }
+    { name: "Vishweshwer Reddy", roll: "24951A05H0", dept: "CSE", status: "Verified" },
+    { name: "Rahul Kumar", roll: "23951A0523", dept: "IT", status: "Pending" },
+    { name: "Sneha Lata", roll: "23951A0524", dept: "ECE", status: "Verified" }
 ];
 
 // --- 2. Authentication Logic ---
@@ -10,26 +11,30 @@ function handleLogin() {
     const user = document.getElementById('username').value;
     const pass = document.getElementById('password').value;
 
-    // Direct match for project demonstration
-    if (user === "23951A0521" && pass === "admin123") {
+    console.log("Login Attempt:", user);
+
+    // Using your requested credentials
+    if (user === "24951AO5HO" && pass === "1234") {
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("userRoll", user);
         window.location.href = "dashboard.html";
     } else {
-        alert("Invalid Credentials! Try 23951A0521 / admin123");
+        alert("Access Denied! Check your Roll Number and Password.");
     }
 }
 
-// --- 3. Dashboard Logic ---
+// --- 3. Dashboard Initialization ---
 function initDashboard() {
-    // Check if user is logged in
-    if (localStorage.getItem("isLoggedIn") !== "true" && window.location.pathname.includes("dashboard.html")) {
+    // Check if user is logged in before showing data
+    if (localStorage.getItem("isLoggedIn") !== "true") {
         window.location.href = "index.html";
         return;
     }
 
     renderTable();
-    lucide.createIcons(); // Initialize icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 }
 
 // --- 4. Render Table Dynamically ---
@@ -37,7 +42,7 @@ function renderTable(dataToRender = students) {
     const tableBody = document.getElementById('studentBody');
     if (!tableBody) return;
 
-    tableBody.innerHTML = dataToRender.map((student, index) => `
+    tableBody.innerHTML = dataToRender.map(student => `
         <tr>
             <td>
                 <div style="display: flex; align-items: center; gap: 10px;">
@@ -79,7 +84,7 @@ function addNew() {
             status: "Pending"
         });
         renderTable();
-        alert("Student added to the DevOps Registry!");
+        alert("Successfully added to the DevOps Registry!");
     }
 }
 
@@ -89,10 +94,15 @@ function logout() {
     window.location.href = "index.html";
 }
 
-// Initialize based on current page
+// --- 8. Event Listeners ---
 document.addEventListener('DOMContentLoaded', () => {
+    // If we are on the dashboard page
     if (document.getElementById('studentBody')) {
         initDashboard();
     }
-    lucide.createIcons();
+    
+    // Initialize icons if the library is loaded
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 });
