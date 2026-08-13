@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CampusFlow | Attendance</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <aside class="sidebar">
+
+    <div class="brand">
+      <span>◆</span> CampusFlow
+    </div>
+
+    <p class="eyebrow">STUDENT PORTAL</p>
+
+    <nav>
+
+      <button
+        class="nav-item"
+        onclick="location.href='index.html'">
+        Dashboard
+      </button>
+
+      <button
+        class="nav-item active">
+        Attendance
+      </button>
+
+      <button
+        class="nav-item"
+        onclick="location.href='index.html'">
+        Academics
+      </button>
+
+      <button
+        class="nav-item"
+        onclick="location.href='index.html'">
+        Placements
+      </button>
+
+      <button
+        class="nav-item"
+        onclick="location.href='index.html'">
+        Skills
+      </button>
+
+    </nav>
+
+    <div class="sidebar-card">
+
+      <span class="status-dot"></span>
+
+      <div>
+        <strong>CampusFlow</strong>
+        <small>Student Portal</small>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <main class="main">
+
+    <header class="topbar">
+
+      <div>
+
+        <p class="eyebrow">
+          STUDENT OPERATIONS
+        </p>
+
+        <h1>
+          Attendance
+        </h1>
+
+      </div>
+
+      <div class="top-actions">
+
+        <button
+          class="icon-btn"
+          id="themeBtn">
+          ☾
+        </button>
+
+        <button class="avatar">
+          MR
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- ATTENDANCE SUMMARY -->
+
+    <div class="grid stats">
+
+      <div class="card">
+
+        <div class="stat-label">
+          Overall Attendance
+        </div>
+
+        <div
+          class="stat-value"
+          id="overallAttendance">
+          0%
+        </div>
+
+        <div class="trend">
+          Current semester
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="stat-label">
+          Classes Attended
+        </div>
+
+        <div
+          class="stat-value"
+          id="classesAttended">
+          0
+        </div>
+
+        <div class="trend">
+          Present
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="stat-label">
+          Classes Missed
+        </div>
+
+        <div
+          class="stat-value"
+          id="classesMissed">
+          0
+        </div>
+
+        <div class="trend">
+          Absences
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="stat-label">
+          Attendance Status
+        </div>
+
+        <div
+          class="stat-value"
+          id="attendanceStatus">
+          —
+        </div>
+
+        <div class="trend">
+          Eligibility
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <br>
+
+
+    <!-- SUBJECT ATTENDANCE -->
+
+    <div class="card">
+
+      <div class="card-head">
+
+        <div>
+
+          <h2>
+            Subject-wise Attendance
+          </h2>
+
+          <p class="muted small">
+            Your attendance performance by subject.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="table-wrap">
+
+        <table class="table">
+
+          <thead>
+
+            <tr>
+
+              <th>
+                Subject
+              </th>
+
+              <th>
+                Classes
+              </th>
+
+              <th>
+                Present
+              </th>
+
+              <th>
+                Absent
+              </th>
+
+              <th>
+                Percentage
+              </th>
+
+              <th>
+                Status
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody id="attendanceRows">
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+
+    <br>
+
+
+    <!-- ATTENDANCE ALERT -->
+
+    <div class="card">
+
+      <div class="card-head">
+
+        <h2>
+          Attendance Intelligence
+        </h2>
+
+      </div>
+
+      <div id="attendanceInsight">
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <script src="attendance.js"></script>
+
+</body>
+
+</html>
