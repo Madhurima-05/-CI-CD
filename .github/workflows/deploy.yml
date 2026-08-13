@@ -1,4 +1,5 @@
-name: Student Management CI/CD Pipeline
+name: Student Management CI/CD
+
 on:
   push:
     branches:
@@ -6,22 +7,50 @@ on:
   pull_request:
     branches:
       - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build-test-deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: Display Files
-        run: ls -la
-      - name: Setup Java
-        uses: actions/setup-java@v4
+
+      - name: Check Project Files
+        run: |
+          echo "Checking Student Management System files..."
+          ls -la
+          test -f index.html
+          test -f style.css
+          test -f script.js
+          echo "All required files are present!"
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Website
+        uses: actions/upload-pages-artifact@v3
         with:
-          distribution: temurin
-          java-version: '17'
-      - name: Build Project
-        run: echo "Building Student Management System..."
-      - name: Run Tests
-        run: echo "Running Tests..."
-      - name: Deploy Project
-        run: echo "Deployment Successful!"
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
