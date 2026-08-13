@@ -1,35 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>IARE Login</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CampusFlow | Student & Placement Operations</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="auth-bg">
-    <div class="glass-login">
-        <div class="logo-area">
-            <div class="logo-circle">IARE</div>
-            <h2>DevOps Portal</h2>
-        </div>
-        <div class="auth-form">
-            <div class="input-wrapper">
-                <i data-lucide="user"></i>
-                <input type="text" id="username" placeholder="Roll Number (24951a05h0)">
-            </div>
-            <div class="input-wrapper">
-                <i data-lucide="lock"></i>
-                <input type="password" id="password" placeholder="Password (1234)">
-            </div>
-            <button type="button" onclick="handleLogin()" class="btn-primary">
-                Explore Dashboard <i data-lucide="arrow-right"></i>
-            </button>
-        </div>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="brand">
+      <span>◆</span> CampusFlow
     </div>
 
-    <script src="script.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <p class="eyebrow">OPERATIONS</p>
+
+    <nav id="nav">
+
+      <button class="nav-item active" data-view="overview">
+        Overview
+      </button>
+
+      <button class="nav-item" data-view="students">
+        Students 360°
+      </button>
+
+      <button class="nav-item" data-view="placements">
+        Placement Hub
+      </button>
+
+      <button class="nav-item" data-view="skills">
+        Skill Gap
+      </button>
+
+      <button class="nav-item" data-view="companies">
+        Company Match
+      </button>
+
+      <button class="nav-item" data-view="analytics">
+        Analytics
+      </button>
+
+    </nav>
+
+    <!-- CI/CD STATUS -->
+    <div class="sidebar-card">
+
+      <span class="status-dot"></span>
+
+      <div>
+        <strong>CI/CD Online</strong>
+        <small>Production pipeline healthy</small>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+      <div>
+
+        <p class="eyebrow">
+          CAMPUS OPERATIONS
+        </p>
+
+        <h1 id="pageTitle">
+          Overview
+        </h1>
+
+      </div>
+
+
+      <div class="top-actions">
+
+        <button
+          class="icon-btn"
+          id="themeBtn"
+          title="Toggle theme">
+          ☾
+        </button>
+
+        <button class="avatar">
+          MR
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- APPLICATION CONTENT -->
+    <section id="app"></section>
+
+  </main>
+
+
+  <!-- ADD STUDENT DIALOG -->
+  <dialog id="studentDialog">
+
+    <form method="dialog" id="studentForm">
+
+      <div class="dialog-head">
+
+        <h2>
+          Add Student
+        </h2>
+
+        <button
+          value="cancel"
+          class="close">
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="form-grid">
+
+        <label>
+          Name
+
+          <input
+            id="studentName"
+            required
+            placeholder="Student name">
+        </label>
+
+
+        <label>
+          Department
+
+          <input
+            id="studentDept"
+            required
+            placeholder="CSE">
+        </label>
+
+
+        <label>
+          CGPA
+
+          <input
+            id="studentCgpa"
+            type="number"
+            step="0.01"
+            min="0"
+            max="10"
+            required
+            placeholder="8.5">
+        </label>
+
+
+        <label>
+          Skills
+
+          <input
+            id="studentSkills"
+            required
+            placeholder="Java, SQL, React">
+        </label>
+
+      </div>
+
+
+      <button
+        class="primary"
+        value="default">
+        Add Student
+      </button>
+
+    </form>
+
+  </dialog>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+
 </body>
 </html>
