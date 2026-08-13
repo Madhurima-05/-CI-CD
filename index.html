@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<script>
+  const loggedIn =
+    sessionStorage.getItem("campusflow_logged_in");
+
+  if (!loggedIn) {
+    window.location.href = "login.html";
+  }
+</script>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
