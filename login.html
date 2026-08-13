@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusFlow | Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-container">
+
+        <!-- LEFT SIDE -->
+        <section class="login-brand">
+
+            <div class="login-logo">
+                ◆ CampusFlow
+            </div>
+
+            <h1>
+                Your Campus.<br>
+                One Intelligent Platform.
+            </h1>
+
+            <p>
+                Manage academics, attendance, skills,
+                placements and student success from one
+                intelligent campus platform.
+            </p>
+
+            <div class="login-features">
+
+                <div>
+                    <span>✓</span>
+                    Smart Student Management
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Real-time Attendance Tracking
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Placement Intelligence
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Personalized Student Insights
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+        <section class="login-card">
+
+            <div class="login-header">
+
+                <div class="mobile-logo">
+                    ◆ CampusFlow
+                </div>
+
+                <h2>
+                    Welcome back
+                </h2>
+
+                <p>
+                    Sign in to continue to your dashboard.
+                </p>
+
+            </div>
+
+
+            <!-- ROLE -->
+            <div class="role-selector">
+
+                <button
+                    type="button"
+                    class="role active"
+                    data-role="student">
+
+                    👨‍🎓 Student
+
+                </button>
+
+                <button
+                    type="button"
+                    class="role"
+                    data-role="faculty">
+
+                    👨‍🏫 Faculty
+
+                </button>
+
+                <button
+                    type="button"
+                    class="role"
+                    data-role="admin">
+
+                    🛡️ Admin
+
+                </button>
+
+            </div>
+
+
+            <form id="loginForm">
+
+                <input
+                    type="hidden"
+                    id="selectedRole"
+                    value="student"
+                >
+
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label>
+                    Password
+                </label>
+
+                <div class="password-field">
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="showPassword">
+
+                        Show
+
+                    </button>
+
+                </div>
+
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        Remember me
+
+                    </label>
+
+                    <a href="#">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-button">
+
+                    Sign In
+
+                </button>
+
+            </form>
+
+
+            <div
+                id="loginMessage"
+                class="login-message">
+            </div>
+
+
+            <div class="demo-login">
+
+                <strong>
+                    Demo Login
+                </strong>
+
+                <p>
+                    Student: student@campusflow.com
+                </p>
+
+                <p>
+                    Password: student123
+                </p>
+
+            </div>
+
+
+            <p class="login-footer">
+
+                CampusFlow © 2026
+
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
