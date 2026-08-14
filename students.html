@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CampusFlow | Students</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+<div class="cf-app">
+
+  <div class="cf-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="cf-sidebar">
+
+      <div class="cf-brand">
+        <div class="cf-brand-mark">◆</div>
+
+        <div class="cf-brand-name">
+          Campus<span>Flow</span>
+        </div>
+      </div>
+
+      <nav class="cf-nav">
+
+        <div class="cf-nav-label">MAIN</div>
+
+        <button class="cf-nav-item"
+          onclick="location.href='index.html'">
+          <span class="cf-nav-icon">🏠</span>
+          Home
+        </button>
+
+        <button class="cf-nav-item active">
+          <span class="cf-nav-icon">👨‍🎓</span>
+          Students
+        </button>
+
+        <button class="cf-nav-item"
+          onclick="location.href='attendance.html'">
+          <span class="cf-nav-icon">📅</span>
+          Attendance
+        </button>
+
+        <button class="cf-nav-item">
+          <span class="cf-nav-icon">📚</span>
+          Academics
+        </button>
+
+        <button class="cf-nav-item">
+          <span class="cf-nav-icon">📝</span>
+          Assignments
+          <span class="cf-nav-badge">4</span>
+        </button>
+
+        <button class="cf-nav-item">
+          <span class="cf-nav-icon">🗓️</span>
+          Timetable
+        </button>
+
+        <div class="cf-nav-label">CAREER</div>
+
+        <button class="cf-nav-item">
+          <span class="cf-nav-icon">🎯</span>
+          Placements
+        </button>
+
+        <button class="cf-nav-item">
+          <span class="cf-nav-icon">🧠</span>
+          Skill Gap
+        </button>
+
+        <button class="cf-nav-item">
+          <span class="cf-nav-icon">🏆</span>
+          Achievements
+        </button>
+
+        <div class="cf-nav-label">INSIGHTS</div>
+
+        <button class="cf-nav-item">
+          <span class="cf-nav-icon">📊</span>
+          Analytics
+        </button>
+
+      </nav>
+
+      <div class="cf-sidebar-footer">
+
+        <div class="cf-user-mini">
+
+          <div class="cf-avatar">MR</div>
+
+          <div class="cf-user-info">
+
+            <span class="cf-user-name">
+              Madhurima Reddy
+            </span>
+
+            <span class="cf-user-role">
+              CSE • Student
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="cf-main">
+
+      <!-- TOPBAR -->
+      <header class="cf-topbar">
+
+        <div class="cf-search">
+
+          <span>⌕</span>
+
+          <input
+            type="search"
+            id="studentSearch"
+            placeholder="Search students...">
+
+        </div>
+
+        <div class="cf-top-actions">
+
+          <button
+            class="cf-icon-button"
+            id="themeButton">
+            🌙
+          </button>
+
+          <button class="cf-icon-button">
+            🔔
+          </button>
+
+          <div class="cf-avatar">
+            MR
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- CONTENT -->
+      <section class="cf-content">
+
+        <!-- HEADER -->
+        <div class="cf-page-header">
+
+          <div>
+
+            <div class="cf-eyebrow">
+              STUDENT MANAGEMENT
+            </div>
+
+            <h1 class="cf-page-title">
+              Students
+            </h1>
+
+            <p class="cf-page-subtitle">
+              Manage and explore student academic
+              profiles in one place.
+            </p>
+
+          </div>
+
+          <button
+            class="cf-button cf-button-primary"
+            id="addStudentButton">
+
+            + Add Student
+
+          </button>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+        <div class="cf-stat-grid">
+
+          <div class="cf-stat-card">
+
+            <div class="cf-stat-icon">
+              👨‍🎓
+            </div>
+
+            <div class="cf-stat-label">
+              TOTAL STUDENTS
+            </div>
+
+            <div class="cf-stat-value">
+              1,248
+            </div>
+
+            <div class="cf-stat-change cf-positive">
+              ↑ 8.2% this year
+            </div>
+
+          </div>
+
+
+          <div class="cf-stat-card">
+
+            <div class="cf-stat-icon">
+              🟢
+            </div>
+
+            <div class="cf-stat-label">
+              ACTIVE
+            </div>
+
+            <div class="cf-stat-value">
+              1,203
+            </div>
+
+            <div class="cf-stat-change cf-positive">
+              96.4% active
+            </div>
+
+          </div>
+
+
+          <div class="cf-stat-card">
+
+            <div class="cf-stat-icon">
+              🎓
+            </div>
+
+            <div class="cf-stat-label">
+              CSE STUDENTS
+            </div>
+
+            <div class="cf-stat-value">
+              486
+            </div>
+
+            <div class="cf-stat-change">
+              39% of students
+            </div>
+
+          </div>
+
+
+          <div class="cf-stat-card">
+
+            <div class="cf-stat-icon">
+              ⭐
+            </div>
+
+            <div class="cf-stat-label">
+              TOP PERFORMERS
+            </div>
+
+            <div class="cf-stat-value">
+              142
+            </div>
+
+            <div class="cf-stat-change cf-positive">
+              CGPA above 8.5
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <br>
+
+
+        <!-- FILTERS -->
+        <div class="cf-card cf-card-padding">
+
+          <div class="cf-card-header">
+
+            <div>
+
+              <div class="cf-card-title">
+                Student Directory
+              </div>
+
+              <div class="cf-card-description">
+                Search and filter student profiles
+              </div>
+
+            </div>
+
+            <span class="cf-pill cf-pill-info">
+              1,248 Students
+            </span>
+
+          </div>
+
+
+          <div style="
+            display:grid;
+            grid-template-columns:
+              minmax(180px,2fr)
+              repeat(3,minmax(130px,1fr));
+            gap:10px;
+            margin-bottom:20px;
+          ">
+
+            <input
+              id="directorySearch"
+              placeholder="🔍 Search by name or ID..."
+              style="
+                width:100%;
+                padding:11px 13px;
+                border:1px solid var(--cf-border);
+                border-radius:10px;
+                outline:none;
+                background:var(--cf-surface);
+                color:var(--cf-text);
+                font-size:10px;
+              ">
+
+
+            <select
+              id="departmentFilter"
+              style="
+                padding:10px;
+                border:1px solid var(--cf-border);
+                border-radius:10px;
+                background:var(--cf-surface);
+                color:var(--cf-text);
+                font-size:10px;
+              ">
+
+              <option value="all">
+                All Departments
+              </option>
+
+              <option value="CSE">
+                Computer Science
+              </option>
+
+              <option value="ECE">
+                Electronics
+              </option>
+
+              <option value="EEE">
+                Electrical
+              </option>
+
+            </select>
+
+
+            <select
+              id="yearFilter"
+              style="
+                padding:10px;
+                border:1px solid var(--cf-border);
+                border-radius:10px;
+                background:var(--cf-surface);
+                color:var(--cf-text);
+                font-size:10px;
+              ">
+
+              <option value="all">
+                All Years
+              </option>
+
+              <option value="1">
+                1st Year
+              </option>
+
+              <option value="2">
+                2nd Year
+              </option>
+
+              <option value="3">
+                3rd Year
+              </option>
+
+              <option value="4">
+                4th Year
+              </option>
+
+            </select>
+
+
+            <select
+              id="statusFilter"
+              style="
+                padding:10px;
+                border:1px solid var(--cf-border);
+                border-radius:10px;
+                background:var(--cf-surface);
+                color:var(--cf-text);
+                font-size:10px;
+              ">
+
+              <option value="all">
+                All Status
+              </option>
+
+              <option value="active">
+                Active
+              </option>
+
+              <option value="inactive">
+                Inactive
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- STUDENT TABLE -->
+
+          <div class="cf-table-wrapper">
+
+            <table class="cf-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>Student</th>
+
+                  <th>ID</th>
+
+                  <th>Department</th>
+
+                  <th>Year</th>
+
+                  <th>CGPA</th>
+
+                  <th>Attendance</th>
+
+                  <th>Status</th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody id="studentTable">
+
+                <tr
+                  data-name="Madhurima Reddy"
+                  data-id="CSE24001"
+                  data-department="CSE"
+                  data-year="3"
+                  data-status="active">
+
+                  <td>
+
+                    <div style="
+                      display:flex;
+                      align-items:center;
+                      gap:9px;
+                    ">
+
+                      <div class="cf-avatar">
+                        MR
+                      </div>
+
+                      <div>
+
+                        <strong style="
+                          font-size:10px;
+                        ">
+                          Madhurima Reddy
+                        </strong>
+
+                        <div style="
+                          color:var(--cf-text-muted);
+                          font-size:8px;
+                          margin-top:2px;
+                        ">
+                          Computer Science
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                  <td>
+                    CSE24001
+                  </td>
+
+                  <td>
+                    CSE
+                  </td>
+
+                  <td>
+                    3rd Year
+                  </td>
+
+                  <td>
+                    <strong>9.03</strong>
+                  </td>
+
+                  <td>
+
+                    <span class="
+                      cf-pill
+                      cf-pill-success">
+                      86.4%
+                    </span>
+
+                  </td>
+
+                  <td>
+
+                    <span class="
+                      cf-pill
+                      cf-pill-success">
+                      Active
+                    </span>
+
+                  </td>
+
+                </tr>
+
+
+                <tr
+                  data-name="Rahul Sharma"
+                  data-id="CSE24002"
+                  data-department="CSE"
+                  data-year="3"
+                  data-status="active">
+
+                  <td>
+
+                    <div style="
+                      display:flex;
+                      align-items:center;
+                      gap:9px;
+                    ">
+
+                      <div class="cf-avatar">
+                        RS
+                      </div>
+
+                      <div>
+
+                        <strong style="
+                          font-size:10px;
+                        ">
+                          Rahul Sharma
+                        </strong>
+
+                        <div style="
+                          color:var(--cf-text-muted);
+                          font-size:8px;
+                          margin-top:2px;
+                        ">
+                          Computer Science
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                  <td>CSE24002</td>
+
+                  <td>CSE</td>
+
+                  <td>3rd Year</td>
+
+                  <td><strong>8.74</strong></td>
+
+                  <td>
+
+                    <span class="
+                      cf-pill
+                      cf-pill-success">
+                      91.2%
+                    </span>
+
+                  </td>
+
+                  <td>
+
+                    <span class="
+                      cf-pill
+                      cf-pill-success">
+                      Active
+                    </span>
+
+                  </td>
+
+                </tr>
+
+
+                <tr
+                  data-name="Ananya Reddy"
+                  data-id="ECE24017"
+                  data-department="ECE"
+                  data-year="3"
+                  data-status="active">
+
+                  <td>
+
+                    <div style="
+                      display:flex;
+                      align-items:center;
+                      gap:9px;
+                    ">
+
+                      <div class="cf-avatar">
+                        AR
+                      </div>
+
+                      <div>
+
+                        <strong style="
+                          font-size:10px;
+                        ">
+                          Ananya Reddy
+                        </strong>
+
+                        <div style="
+                          color:var(--cf-text-muted);
+                          font-size:8px;
+                          margin-top:2px;
+                        ">
+                          Electronics
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                  <td>ECE24017</td>
+
+                  <td>ECE</td>
+
+                  <td>3rd Year</td>
+
+                  <td><strong>8.91</strong></td>
+
+                  <td>
+
+                    <span class="
+                      cf-pill
+                      cf-pill-success">
+                      88.7%
+                    </span>
+
+                  </td>
+
+                  <td>
+
+                    <span class="
+                      cf-pill
+                      cf-pill-success">
+                      Active
+                    </span>
+
+                  </td>
+
+                </tr>
+
+
+                <tr
+                  data-name="Kiran Kumar"
+                  data-id="EEE23031"
+                  data-department="EEE"
+                  data-year="4"
+                  data-status="active">
+
+                  <td>
+
+                    <div style="
+                      display:flex;
+                      align-items:center;
+                      gap:9px;
+                    ">
+
+                      <div class="cf-avatar">
+                        KK
+                      </div>
+
+                      <div>
+
+                        <strong style="
+                          font-size:10px;
+                        ">
+                          Kiran Kumar
+                        </strong>
+
+                        <div style="
+                          color:var(--cf-text-muted);
+                          font-size:8px;
+                          margin-top:2px;
+                        ">
+                          Electrical Engineering
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                  <td>EEE23031</td>
+
+                  <td>EEE</td>
+
+                  <td>4th Year</td>
+
+                  <td><strong>8.21</strong></td>
+
+                  <td>
+
+                    <span class="
+                      cf-pill
+                      cf-pill-warning">
+                      74.5%
+                    </span>
+
+                  </td>
+
+                  <td>
+
+                    <span class="
+                      cf-pill
+                      cf-pill-success">
+                      Active
+                    </span>
+
+                  </td>
+
+                </tr>
+
+
+                <tr
+                  data-name="Sneha Patel"
+                  data-id="CSE25044"
+                  data-department="CSE"
+                  data-year="2"
+                  data-status="inactive">
+
+                  <td>
+
+                    <div style="
+                      display:flex;
+                      align-items:center;
+                      gap:9px;
+                    ">
+
+                      <div class="cf-avatar">
+                        SP
+                      </div>
+
+                      <div>
+
+                        <strong style="
+                          font-size:10px;
+                        ">
+                          Sneha Patel
+                        </strong>
+
+                        <div style="
+                          color:var(--cf-text-muted);
+                          font-size:8px;
+                          margin-top:2px;
+                        ">
+                          Computer Science
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                  <td>CSE25044</td>
+
+                  <td>CSE</td>
+
+                  <td>2nd Year</td>
+
+                  <td><strong>7.86</strong></td>
+
+                  <td>
+
+                    <span class="
+                      cf-pill
+                      cf-pill-danger">
+                      68.1%
+                    </span>
+
+                  </td>
+
+                  <td>
+
+                    <span class="
+                      cf-pill
+                      cf-pill-danger">
+                      Inactive
+                    </span>
+
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- MOBILE NAV -->
+
+  <nav class="cf-mobile-nav">
+
+    <button
+      class="cf-mobile-nav-item"
+      onclick="location.href='index.html'">
+
+      <span class="cf-mobile-nav-icon">🏠</span>
+      Home
+
+    </button>
+
+    <button
+      class="cf-mobile-nav-item active">
+
+      <span class="cf-mobile-nav-icon">👨‍🎓</span>
+      Students
+
+    </button>
+
+    <button
+      class="cf-mobile-nav-item"
+      onclick="location.href='attendance.html'">
+
+      <span class="cf-mobile-nav-icon">📅</span>
+      Attend
+
+    </button>
+
+    <button class="cf-mobile-nav-item">
+
+      <span class="cf-mobile-nav-icon">🎯</span>
+      Career
+
+    </button>
+
+    <button class="cf-mobile-nav-item">
+
+      <span class="cf-mobile-nav-icon">👤</span>
+      Profile
+
+    </button>
+
+  </nav>
+
+</div>
+
+
+<script>
+
+  /* ============================
+     THEME
+     ============================ */
+
+  const themeButton =
+    document.getElementById("themeButton");
+
+  themeButton.addEventListener(
+    "click",
+    () => {
+
+      document.body.classList.toggle(
+        "cf-dark"
+      );
+
+      const dark =
+        document.body.classList.contains(
+          "cf-dark"
+        );
+
+      themeButton.textContent =
+        dark ? "☀️" : "🌙";
+
+      localStorage.setItem(
+        "campusflow_theme",
+        dark ? "dark" : "light"
+      );
+
+    }
+  );
+
+
+  if (
+    localStorage.getItem(
+      "campusflow_theme"
+    ) === "dark"
+  ) {
+
+    document.body.classList.add(
+      "cf-dark"
+    );
+
+    themeButton.textContent = "☀️";
+
+  }
+
+
+  /* ============================
+     FILTERING
+     ============================ */
+
+  const searchInputs = [
+    document.getElementById(
+      "studentSearch"
+    ),
+    document.getElementById(
+      "directorySearch"
+    )
+  ];
+
+  const departmentFilter =
+    document.getElementById(
+      "departmentFilter"
+    );
+
+  const yearFilter =
+    document.getElementById(
+      "yearFilter"
+    );
+
+  const statusFilter =
+    document.getElementById(
+      "statusFilter"
+    );
+
+  const rows =
+    document.querySelectorAll(
+      "#studentTable tr"
+    );
+
+
+  function filterStudents() {
+
+    const search =
+      (
+        document.getElementById(
+          "directorySearch"
+        ).value
+        + " "
+        +
+        document.getElementById(
+          "studentSearch"
+        ).value
+      )
+      .toLowerCase();
+
+
+    const department =
+      departmentFilter.value;
+
+    const year =
+      yearFilter.value;
+
+    const status =
+      statusFilter.value;
+
+
+    rows.forEach(row => {
+
+      const name =
+        row.dataset.name.toLowerCase();
+
+      const id =
+        row.dataset.id.toLowerCase();
+
+      const rowDepartment =
+        row.dataset.department;
+
+      const rowYear =
+        row.dataset.year;
+
+      const rowStatus =
+        row.dataset.status;
+
+
+      const matchesSearch =
+        !search ||
+        name.includes(search) ||
+        id.includes(search);
+
+
+      const matchesDepartment =
+        department === "all" ||
+        rowDepartment === department;
+
+
+      const matchesYear =
+        year === "all" ||
+        rowYear === year;
+
+
+      const matchesStatus =
+        status === "all" ||
+        rowStatus === status;
+
+
+      row.style.display =
+        matchesSearch &&
+        matchesDepartment &&
+        matchesYear &&
+        matchesStatus
+          ? ""
+          : "none";
+
+    });
+
+  }
+
+
+  searchInputs.forEach(input => {
+
+    input.addEventListener(
+      "input",
+      filterStudents
+    );
+
+  });
+
+
+  departmentFilter.addEventListener(
+    "change",
+    filterStudents
+  );
+
+  yearFilter.addEventListener(
+    "change",
+    filterStudents
+  );
+
+  statusFilter.addEventListener(
+    "change",
+    filterStudents
+  );
+
+
+  /* ============================
+     ADD STUDENT
+     ============================ */
+
+  document
+    .getElementById(
+      "addStudentButton"
+    )
+    .addEventListener(
+      "click",
+      () => {
+
+        alert(
+          "Student creation module will be connected next."
+        );
+
+      }
+    );
+
+</script>
+
+</body>
+</html>
