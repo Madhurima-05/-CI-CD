@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<script>
-  const loggedIn =
-    sessionStorage.getItem("campusflow_logged_in");
-
-  if (!loggedIn) {
-    window.location.href = "login.html";
-  }
-</script>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CampusFlow | Student & Placement Operations</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>CampusFlow | Dashboard</title>
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="app.css">
@@ -20,189 +16,1342 @@
 
 <body>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
+  <!-- =====================================================
+       CAMPUSFLOW APP
+       ===================================================== -->
 
-    <div class="brand">
-      <span>◆</span> CampusFlow
+  <div class="cf-app">
+
+    <div class="cf-layout">
+
+
+      <!-- =================================================
+           SIDEBAR
+           ================================================= -->
+
+      <aside class="cf-sidebar">
+
+        <div class="cf-brand">
+
+          <div class="cf-brand-mark">
+            ◆
+          </div>
+
+          <div class="cf-brand-name">
+            Campus<span>Flow</span>
+          </div>
+
+        </div>
+
+
+        <nav class="cf-nav">
+
+          <div class="cf-nav-label">
+            MAIN
+          </div>
+
+          <button
+            class="cf-nav-item active"
+            data-page="home">
+
+            <span class="cf-nav-icon">🏠</span>
+
+            Home
+
+          </button>
+
+
+          <button
+            class="cf-nav-item"
+            data-page="students">
+
+            <span class="cf-nav-icon">👨‍🎓</span>
+
+            Students
+
+          </button>
+
+
+          <button
+            class="cf-nav-item"
+            onclick="location.href='attendance.html'">
+
+            <span class="cf-nav-icon">📅</span>
+
+            Attendance
+
+          </button>
+
+
+          <button
+            class="cf-nav-item"
+            data-page="academics">
+
+            <span class="cf-nav-icon">📚</span>
+
+            Academics
+
+          </button>
+
+
+          <button
+            class="cf-nav-item"
+            data-page="assignments">
+
+            <span class="cf-nav-icon">📝</span>
+
+            Assignments
+
+            <span class="cf-nav-badge">
+              4
+            </span>
+
+          </button>
+
+
+          <button
+            class="cf-nav-item"
+            data-page="timetable">
+
+            <span class="cf-nav-icon">🗓️</span>
+
+            Timetable
+
+          </button>
+
+
+          <div class="cf-nav-label">
+            CAREER
+          </div>
+
+
+          <button
+            class="cf-nav-item"
+            data-page="placements">
+
+            <span class="cf-nav-icon">🎯</span>
+
+            Placements
+
+          </button>
+
+
+          <button
+            class="cf-nav-item"
+            data-page="skills">
+
+            <span class="cf-nav-icon">🧠</span>
+
+            Skill Gap
+
+          </button>
+
+
+          <button
+            class="cf-nav-item"
+            data-page="achievements">
+
+            <span class="cf-nav-icon">🏆</span>
+
+            Achievements
+
+          </button>
+
+
+          <div class="cf-nav-label">
+            INSIGHTS
+          </div>
+
+
+          <button
+            class="cf-nav-item"
+            data-page="analytics">
+
+            <span class="cf-nav-icon">📊</span>
+
+            Analytics
+
+          </button>
+
+
+          <button
+            class="cf-nav-item"
+            data-page="notifications">
+
+            <span class="cf-nav-icon">🔔</span>
+
+            Notifications
+
+            <span class="cf-nav-badge">
+              3
+            </span>
+
+          </button>
+
+        </nav>
+
+
+        <!-- SIDEBAR FOOTER -->
+
+        <div class="cf-sidebar-footer">
+
+          <div class="cf-user-mini">
+
+            <div class="cf-avatar">
+              MR
+            </div>
+
+            <div class="cf-user-info">
+
+              <span class="cf-user-name">
+                Madhurima Reddy
+              </span>
+
+              <span class="cf-user-role">
+                CSE • Student
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+
+
+      <!-- =================================================
+           MAIN
+           ================================================= -->
+
+      <main class="cf-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="cf-topbar">
+
+          <div class="cf-search">
+
+            <span>⌕</span>
+
+            <input
+              type="search"
+              id="globalSearch"
+              placeholder="Search CampusFlow...">
+
+          </div>
+
+
+          <div class="cf-top-actions">
+
+            <button
+              class="cf-icon-button"
+              id="themeButton"
+              title="Toggle theme">
+
+              🌙
+
+            </button>
+
+
+            <button
+              class="cf-icon-button"
+              id="notificationButton"
+              title="Notifications">
+
+              🔔
+
+            </button>
+
+
+            <button
+              class="cf-icon-button"
+              id="logoutButton"
+              title="Logout">
+
+              ⇥
+
+            </button>
+
+
+            <div class="cf-avatar">
+              MR
+            </div>
+
+          </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+             ================================================= -->
+
+        <section class="cf-content">
+
+
+          <!-- PAGE HEADER -->
+
+          <div class="cf-page-header">
+
+            <div>
+
+              <div class="cf-eyebrow">
+                STUDENT DASHBOARD
+              </div>
+
+              <h1 class="cf-page-title">
+                Welcome back, Madhurima 👋
+              </h1>
+
+              <p class="cf-page-subtitle">
+                Here's what's happening with your
+                academic and career journey.
+              </p>
+
+            </div>
+
+
+            <button
+              class="cf-button cf-button-primary"
+              id="quickActionButton">
+
+              + Quick Action
+
+            </button>
+
+          </div>
+
+
+
+          <!-- =================================================
+               STAT CARDS
+               ================================================= -->
+
+          <div class="cf-stat-grid">
+
+
+            <div class="cf-stat-card">
+
+              <div class="cf-stat-icon">
+                🎓
+              </div>
+
+              <div class="cf-stat-label">
+                CURRENT CGPA
+              </div>
+
+              <div
+                class="cf-stat-value"
+                id="cgpaValue">
+
+                9.03
+
+              </div>
+
+              <div
+                class="cf-stat-change cf-positive">
+
+                ↑ 0.18 this semester
+
+              </div>
+
+            </div>
+
+
+            <div class="cf-stat-card">
+
+              <div class="cf-stat-icon">
+                📅
+              </div>
+
+              <div class="cf-stat-label">
+                ATTENDANCE
+              </div>
+
+              <div
+                class="cf-stat-value"
+                id="attendanceValue">
+
+                86.4%
+
+              </div>
+
+              <div
+                class="cf-stat-change cf-positive">
+
+                ↑ 2.4% this month
+
+              </div>
+
+            </div>
+
+
+            <div class="cf-stat-card">
+
+              <div class="cf-stat-icon">
+                🧠
+              </div>
+
+              <div class="cf-stat-label">
+                SKILL READINESS
+              </div>
+
+              <div
+                class="cf-stat-value">
+
+                8/12
+
+              </div>
+
+              <div
+                class="cf-stat-change cf-positive">
+
+                4 skills to improve
+
+              </div>
+
+            </div>
+
+
+            <div class="cf-stat-card">
+
+              <div class="cf-stat-icon">
+                🎯
+              </div>
+
+              <div class="cf-stat-label">
+                PLACEMENT READINESS
+              </div>
+
+              <div
+                class="cf-stat-value">
+
+                78%
+
+              </div>
+
+              <div
+                class="cf-stat-change cf-positive">
+
+                ↑ 6% this month
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <br>
+
+
+
+          <!-- =================================================
+               PERFORMANCE + SCORE
+               ================================================= -->
+
+          <div class="cf-grid cf-grid-main">
+
+
+            <!-- ACADEMIC PERFORMANCE -->
+
+            <div class="cf-card cf-card-padding">
+
+              <div class="cf-card-header">
+
+                <div>
+
+                  <div class="cf-card-title">
+                    Academic Performance
+                  </div>
+
+                  <div class="cf-card-description">
+                    Semester performance overview
+                  </div>
+
+                </div>
+
+                <span class="cf-pill cf-pill-success">
+                  Improving
+                </span>
+
+              </div>
+
+
+              <div style="
+                height:230px;
+                display:flex;
+                align-items:flex-end;
+                gap:14px;
+                padding:20px 10px 10px;
+              ">
+
+                <div
+                  class="performance-bar"
+                  style="height:55%; flex:1;"
+                  title="Semester 1">
+                </div>
+
+                <div
+                  class="performance-bar"
+                  style="height:64%; flex:1;"
+                  title="Semester 2">
+                </div>
+
+                <div
+                  class="performance-bar"
+                  style="height:71%; flex:1;"
+                  title="Semester 3">
+                </div>
+
+                <div
+                  class="performance-bar"
+                  style="height:78%; flex:1;"
+                  title="Semester 4">
+                </div>
+
+                <div
+                  class="performance-bar"
+                  style="height:88%; flex:1;"
+                  title="Current">
+                </div>
+
+              </div>
+
+
+              <div style="
+                display:flex;
+                justify-content:space-around;
+                color:var(--cf-text-muted);
+                font-size:9px;
+              ">
+
+                <span>Sem 1</span>
+                <span>Sem 2</span>
+                <span>Sem 3</span>
+                <span>Sem 4</span>
+                <span>Now</span>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- CAMPUSFLOW SCORE -->
+
+            <div class="cf-card cf-card-padding">
+
+              <div class="cf-card-header">
+
+                <div>
+
+                  <div class="cf-card-title">
+                    CampusFlow Score
+                  </div>
+
+                  <div class="cf-card-description">
+                    Your overall student success score
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div style="
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                padding:18px;
+              ">
+
+                <div style="
+                  width:150px;
+                  height:150px;
+                  border-radius:50%;
+                  display:grid;
+                  place-items:center;
+                  background:
+                    conic-gradient(
+                      var(--cf-primary) 82%,
+                      #ececf3 82%
+                    );
+                  position:relative;
+                ">
+
+                  <div style="
+                    width:116px;
+                    height:116px;
+                    border-radius:50%;
+                    background:var(--cf-surface);
+                    display:flex;
+                    flex-direction:column;
+                    align-items:center;
+                    justify-content:center;
+                  ">
+
+                    <strong style="
+                      font-size:31px;
+                    ">
+                      82
+                    </strong>
+
+                    <span style="
+                      color:var(--cf-text-muted);
+                      font-size:9px;
+                    ">
+                      out of 100
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div style="
+                text-align:center;
+                font-size:10px;
+                color:var(--cf-text-secondary);
+              ">
+
+                You're performing better than
+                <strong>76%</strong> of students.
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <br>
+
+
+
+          <!-- =================================================
+               SMART INSIGHTS
+               ================================================= -->
+
+          <div class="cf-grid cf-grid-2">
+
+
+            <!-- FOCUS -->
+
+            <div class="cf-card cf-card-padding">
+
+              <div class="cf-card-header">
+
+                <div>
+
+                  <div class="cf-card-title">
+                    🎯 Focus This Week
+                  </div>
+
+                  <div class="cf-card-description">
+                    Personalized recommendations
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div
+                class="cf-recommendation"
+                style="
+                  padding:14px;
+                  border-radius:12px;
+                  background:#f4f3ff;
+                  margin-bottom:10px;
+                ">
+
+                <strong style="
+                  font-size:11px;
+                ">
+
+                  Improve DSA
+
+                </strong>
+
+                <p style="
+                  margin-top:5px;
+                  color:var(--cf-text-secondary);
+                  font-size:9px;
+                  line-height:1.6;
+                ">
+
+                  Improving your Data Structures
+                  skills could increase your placement
+                  readiness by approximately 8%.
+
+                </p>
+
+                <button
+                  class="cf-button cf-button-secondary"
+                  style="
+                    margin-top:10px;
+                    min-height:32px;
+                    font-size:9px;
+                  ">
+
+                  View Skill Gap →
+
+                </button>
+
+              </div>
+
+
+              <div
+                class="cf-recommendation"
+                style="
+                  padding:14px;
+                  border-radius:12px;
+                  background:#eef9f4;
+                ">
+
+                <strong style="
+                  font-size:11px;
+                ">
+
+                  Keep your attendance strong
+
+                </strong>
+
+                <p style="
+                  margin-top:5px;
+                  color:var(--cf-text-secondary);
+                  font-size:9px;
+                  line-height:1.6;
+                ">
+
+                  You're currently at 86.4%.
+                  Keep attending regularly to maintain
+                  your eligibility.
+
+                </p>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="cf-card cf-card-padding">
+
+              <div class="cf-card-header">
+
+                <div>
+
+                  <div class="cf-card-title">
+                    🔔 Recent Activity
+                  </div>
+
+                  <div class="cf-card-description">
+                    Latest updates for you
+                  </div>
+
+                </div>
+
+                <button
+                  class="cf-button cf-button-secondary"
+                  style="
+                    min-height:30px;
+                    font-size:9px;
+                  ">
+
+                  View all
+
+                </button>
+
+              </div>
+
+
+              <div style="
+                display:flex;
+                flex-direction:column;
+                gap:14px;
+              ">
+
+
+                <div style="
+                  display:flex;
+                  gap:10px;
+                ">
+
+                  <div class="cf-avatar">
+                    📚
+                  </div>
+
+                  <div>
+
+                    <strong style="
+                      font-size:10px;
+                    ">
+
+                      Assignment due tomorrow
+
+                    </strong>
+
+                    <p style="
+                      color:var(--cf-text-muted);
+                      font-size:9px;
+                      margin-top:3px;
+                    ">
+
+                      Database Management System
+
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div style="
+                  display:flex;
+                  gap:10px;
+                ">
+
+                  <div class="cf-avatar">
+                    🎯
+                  </div>
+
+                  <div>
+
+                    <strong style="
+                      font-size:10px;
+                    ">
+
+                      New company matched
+
+                    </strong>
+
+                    <p style="
+                      color:var(--cf-text-muted);
+                      font-size:9px;
+                      margin-top:3px;
+                    ">
+
+                      Your profile matches a new
+                      placement opportunity.
+
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div style="
+                  display:flex;
+                  gap:10px;
+                ">
+
+                  <div class="cf-avatar">
+                    📅
+                  </div>
+
+                  <div>
+
+                    <strong style="
+                      font-size:10px;
+                    ">
+
+                      Attendance update
+
+                    </strong>
+
+                    <p style="
+                      color:var(--cf-text-muted);
+                      font-size:9px;
+                      margin-top:3px;
+                    ">
+
+                      Your attendance increased by
+                      2.4% this month.
+
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <br>
+
+
+
+          <!-- =================================================
+               TODAY
+               ================================================= -->
+
+          <div class="cf-card cf-card-padding">
+
+            <div class="cf-card-header">
+
+              <div>
+
+                <div class="cf-card-title">
+                  🗓️ Today's Schedule
+                </div>
+
+                <div class="cf-card-description">
+                  Your classes and activities
+                </div>
+
+              </div>
+
+              <span class="cf-pill cf-pill-info">
+                Thursday
+              </span>
+
+            </div>
+
+
+            <div class="cf-table-wrapper">
+
+              <table class="cf-table">
+
+                <thead>
+
+                  <tr>
+
+                    <th>
+                      Time
+                    </th>
+
+                    <th>
+                      Subject
+                    </th>
+
+                    <th>
+                      Room
+                    </th>
+
+                    <th>
+                      Faculty
+                    </th>
+
+                    <th>
+                      Status
+                    </th>
+
+                  </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                  <tr>
+
+                    <td>
+                      09:00 AM
+                    </td>
+
+                    <td>
+                      Data Structures
+                    </td>
+
+                    <td>
+                      Block A • 204
+                    </td>
+
+                    <td>
+                      Dr. Rao
+                    </td>
+
+                    <td>
+
+                      <span class="
+                        cf-pill
+                        cf-pill-success">
+
+                        Completed
+
+                      </span>
+
+                    </td>
+
+                  </tr>
+
+
+                  <tr>
+
+                    <td>
+                      11:00 AM
+                    </td>
+
+                    <td>
+                      Database Management
+                    </td>
+
+                    <td>
+                      Block B • 302
+                    </td>
+
+                    <td>
+                      Prof. Kumar
+                    </td>
+
+                    <td>
+
+                      <span class="
+                        cf-pill
+                        cf-pill-info">
+
+                        Upcoming
+
+                      </span>
+
+                    </td>
+
+                  </tr>
+
+
+                  <tr>
+
+                    <td>
+                      02:00 PM
+                    </td>
+
+                    <td>
+                      Web Technologies
+                    </td>
+
+                    <td>
+                      Lab • 105
+                    </td>
+
+                    <td>
+                      Ms. Priya
+                    </td>
+
+                    <td>
+
+                      <span class="
+                        cf-pill
+                        cf-pill-info">
+
+                        Upcoming
+
+                      </span>
+
+                    </td>
+
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </main>
+
     </div>
 
-    <p class="eyebrow">OPERATIONS</p>
 
-    <nav id="nav">
 
-      <button class="nav-item active" data-view="overview">
-        Overview
-      </button>
+    <!-- =====================================================
+         MOBILE NAVIGATION
+         ===================================================== -->
 
-      <button class="nav-item" data-view="students">
-        Students 360°
-      </button>
+    <nav class="cf-mobile-nav">
+
       <button
-  class="nav-item"
-  onclick="location.href='attendance.html'">
+        class="cf-mobile-nav-item active">
 
-  Attendance
+        <span class="cf-mobile-nav-icon">
+          🏠
+        </span>
 
-</button>
+        Home
 
-      <button class="nav-item" data-view="placements">
-        Placement Hub
       </button>
 
-      <button class="nav-item" data-view="skills">
-        Skill Gap
+
+      <button
+        class="cf-mobile-nav-item">
+
+        <span class="cf-mobile-nav-icon">
+          📊
+        </span>
+
+        Stats
+
       </button>
 
-      <button class="nav-item" data-view="companies">
-        Company Match
+
+      <button
+        class="cf-mobile-nav-item"
+        onclick="location.href='attendance.html'">
+
+        <span class="cf-mobile-nav-icon">
+          📅
+        </span>
+
+        Attend
+
       </button>
 
-      <button class="nav-item" data-view="analytics">
-        Analytics
+
+      <button
+        class="cf-mobile-nav-item">
+
+        <span class="cf-mobile-nav-icon">
+          🎯
+        </span>
+
+        Career
+
+      </button>
+
+
+      <button
+        class="cf-mobile-nav-item">
+
+        <span class="cf-mobile-nav-icon">
+          👤
+        </span>
+
+        Profile
+
       </button>
 
     </nav>
 
-    <!-- CI/CD STATUS -->
-    <div class="sidebar-card">
-
-      <span class="status-dot"></span>
-
-      <div>
-        <strong>CI/CD Online</strong>
-        <small>Production pipeline healthy</small>
-      </div>
-
-    </div>
-
-  </aside>
+  </div>
 
 
-  <!-- MAIN CONTENT -->
-  <main class="main">
 
-    <!-- TOP BAR -->
-    <header class="topbar">
+  <!-- =====================================================
+       DASHBOARD JAVASCRIPT
+       ===================================================== -->
 
-      <div>
+  <script>
 
-        <p class="eyebrow">
-          CAMPUS OPERATIONS
-        </p>
+    /* -----------------------------
+       THEME
+       ----------------------------- */
 
-        <h1 id="pageTitle">
-          Overview
-        </h1>
-
-      </div>
+    const themeButton =
+      document.getElementById(
+        "themeButton"
+      );
 
 
-      <div class="top-actions">
+    themeButton.addEventListener(
+      "click",
+      () => {
 
-        <button
-          class="icon-btn"
-          id="themeBtn"
-          title="Toggle theme">
-          ☾
-        </button>
-
-        <button class="avatar">
-          MR
-        </button>
-
-      </div>
-
-    </header>
+        document.body.classList.toggle(
+          "cf-dark"
+        );
 
 
-    <!-- APPLICATION CONTENT -->
-    <section id="app"></section>
-
-  </main>
-
-
-  <!-- ADD STUDENT DIALOG -->
-  <dialog id="studentDialog">
-
-    <form method="dialog" id="studentForm">
-
-      <div class="dialog-head">
-
-        <h2>
-          Add Student
-        </h2>
-
-        <button
-          value="cancel"
-          class="close">
-          ×
-        </button>
-
-      </div>
+        const dark =
+          document.body.classList.contains(
+            "cf-dark"
+          );
 
 
-      <div class="form-grid">
-
-        <label>
-          Name
-
-          <input
-            id="studentName"
-            required
-            placeholder="Student name">
-        </label>
+        themeButton.textContent =
+          dark ? "☀️" : "🌙";
 
 
-        <label>
-          Department
+        localStorage.setItem(
+          "campusflow_theme",
+          dark ? "dark" : "light"
+        );
 
-          <input
-            id="studentDept"
-            required
-            placeholder="CSE">
-        </label>
-
-
-        <label>
-          CGPA
-
-          <input
-            id="studentCgpa"
-            type="number"
-            step="0.01"
-            min="0"
-            max="10"
-            required
-            placeholder="8.5">
-        </label>
+      }
+    );
 
 
-        <label>
-          Skills
+    if (
+      localStorage.getItem(
+        "campusflow_theme"
+      ) === "dark"
+    ) {
 
-          <input
-            id="studentSkills"
-            required
-            placeholder="Java, SQL, React">
-        </label>
+      document.body.classList.add(
+        "cf-dark"
+      );
 
-      </div>
+      themeButton.textContent = "☀️";
 
-
-      <button
-        class="primary"
-        value="default">
-        Add Student
-      </button>
-
-    </form>
-
-  </dialog>
+    }
 
 
-  <!-- JAVASCRIPT -->
-  <script src="script.js"></script>
+
+    /* -----------------------------
+       LOGOUT
+       ----------------------------- */
+
+    document
+      .getElementById("logoutButton")
+      .addEventListener(
+        "click",
+        () => {
+
+          sessionStorage.clear();
+
+          window.location.href =
+            "login.html";
+
+        }
+      );
+
+
+
+    /* -----------------------------
+       NOTIFICATIONS
+       ----------------------------- */
+
+    document
+      .getElementById(
+        "notificationButton"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          alert(
+            "You have 3 new notifications."
+          );
+
+        }
+      );
+
+
+
+    /* -----------------------------
+       QUICK ACTION
+       ----------------------------- */
+
+    document
+      .getElementById(
+        "quickActionButton"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          window.location.href =
+            "attendance.html";
+
+        }
+      );
+
+
+
+    /* -----------------------------
+       GLOBAL SEARCH
+       ----------------------------- */
+
+    document
+      .getElementById(
+        "globalSearch"
+      )
+      .addEventListener(
+        "keydown",
+        event => {
+
+          if (
+            event.key === "Enter"
+          ) {
+
+            const query =
+              event.target.value
+                .trim()
+                .toLowerCase();
+
+
+            if (
+              query.includes(
+                "attendance"
+              )
+            ) {
+
+              window.location.href =
+                "attendance.html";
+
+            } else {
+
+              alert(
+                "Search feature is coming soon."
+              );
+
+            }
+
+          }
+
+        }
+      );
+
+
+
+    /* -----------------------------
+       SIDEBAR INTERACTIONS
+       ----------------------------- */
+
+    document
+      .querySelectorAll(
+        ".cf-nav-item"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            document
+              .querySelectorAll(
+                ".cf-nav-item"
+              )
+              .forEach(item => {
+
+                item.classList.remove(
+                  "active"
+                );
+
+              });
+
+
+            button.classList.add(
+              "active"
+            );
+
+          }
+        );
+
+      });
+
+  </script>
 
 </body>
+
 </html>
